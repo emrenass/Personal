@@ -1,0 +1,74 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
+| Date         : Thu Dec 29 23:15:29 2016
+| Host         : DESKTOP-9SR4PEB running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Tetris_control_sets_placed.rpt
+| Design       : Tetris
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    21 |
+| Minimum Number of register sites lost to control set restrictions |    31 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              52 |           23 |
+| No           | No                    | Yes                    |              52 |           19 |
+| No           | Yes                   | No                     |              32 |            8 |
+| Yes          | No                    | No                     |             205 |           82 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              36 |           10 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+-------------------------------+------------------+------------------+----------------+
+|         Clock Signal        |         Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-----------------------------+-------------------------------+------------------+------------------+----------------+
+|  f_BUFG                     |                               |                  |                1 |              1 |
+|  clockDForTempCathodes_BUFG |                               |                  |                1 |              1 |
+|  clockDForTempCathodes_BUFG | in0[3]_i_2_n_0                | in0[3]_i_1_n_0   |                2 |              4 |
+|  f_BUFG                     | dForTempCathodes[4]_i_1_n_0   |                  |                2 |              5 |
+|  clockDebounce              |                               |                  |                3 |              7 |
+| ~red_reg[7]_i_9_n_0         |                               |                  |                8 |              8 |
+|  red_reg[7]_i_2_n_0         |                               |                  |                2 |              8 |
+|  clockDebounce              | redBlock[7]_i_1_n_0           |                  |                3 |              8 |
+|  clock_IBUF_BUFG            |                               | reset_IBUF       |                5 |             20 |
+|  clockDForTempCathodes_BUFG | tempThirdCathode[24]_i_1_n_0  |                  |                9 |             24 |
+|  clockDForTempCathodes_BUFG | tempSixthCathode[24]_i_1_n_0  |                  |               11 |             24 |
+|  clockDForTempCathodes_BUFG | tempSeventhCathode0           |                  |               10 |             24 |
+|  clockDForTempCathodes_BUFG | tempSecondCathode[24]_i_1_n_0 |                  |               12 |             24 |
+|  clockDForTempCathodes_BUFG | tempFourthCathode[24]_i_1_n_0 |                  |               10 |             24 |
+|  clockDForTempCathodes_BUFG | tempFivethCathode[24]_i_1_n_0 |                  |                8 |             24 |
+|  clockDForTempCathodes_BUFG | tempFirstCathode[24]_i_1_n_0  |                  |                6 |             24 |
+|  clockDForTempCathodes_BUFG | tempEightthCathode0           |                  |               11 |             24 |
+|  clock_IBUF_BUFG            |                               |                  |                8 |             27 |
+|  f_BUFG                     | a                             | a[0]_i_1_n_0     |                8 |             32 |
+| ~f_BUFG                     |                               | clear            |                8 |             32 |
+|  clockDForTempCathodes_BUFG |                               | reset_IBUF       |               14 |             32 |
++-----------------------------+-------------------------------+------------------+------------------+----------------+
+
+
